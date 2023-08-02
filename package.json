@@ -1,8 +1,8 @@
 {
   "name": "mapgenerator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Optic Competition Map Generator",
-  "buildinf": "Build 20230724",
+  "buildinf": "Build 20230802",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
