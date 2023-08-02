@@ -1,7 +1,7 @@
 <p align="center">
 <img src="./assets/app.png" width="128" height="128"></p>
 <h1 align="center"> OPT Map Generator </h1>
-<h3 align="center"> Light, Functional and Modern Local Anime Manager Based on bgm.tv</h3>
+<h3 align="center"> 11th OPT Competition Map Generator based on Electron.</h3>
 <br/>
 <p align="center">
 <img src="https://img.shields.io/badge/build-passing-green.svg?style=flat-square">
