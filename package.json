@@ -1,0 +1,51 @@
+{
+  "name": "mapgenerator",
+  "version": "1.2.0",
+  "description": "Optic Competition Map Generator",
+  "buildinf": "Build 20230724",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "JimHan@AEA,UESTC",
+  "license": "GPL-3.0",
+  "build": {
+    "productName": "MapGenerator",
+    "appId": "com.uestc.MapGenerator",
+    "copyright": "2023 UESTC × AEA All Rights Reserved.",
+    "asar": true,
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "./assets/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./assets/install.ico",
+      "uninstallerIcon": "./assets/install.ico",
+      "installerHeaderIcon": "./assets/app.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MapGenerator"
+    }
+  },
+  "devDependencies": {
+    "electron": "^20.3.8",
+    "electron-builder": "^23.5.1"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.10",
+    "mica-electron": "^1.4.9"
+  }
+}

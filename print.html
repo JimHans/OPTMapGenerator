@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="winui3.css" type="text/css" /> <!--外挂Winui3样式表(设置界面)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打印菜单</title>
+    <style media="print">   
+        .WindowTitleBar   {display:none;}      
+    </style>  
+    <style >   
+
+    </style>  
+</head>
+<body style="background-color: white;width: 21cm;min-height: 29.7cm;">
+    <div class="WindowTitleBar" style="position:fixed;"> <!--*标题栏-->
+        <img src="./assets/app.png" width="20" height="20" style="position: absolute;line-height: 26px;margin: 4px 0px 0px 5px;left:5px;">
+        <a id="Title" style="height: 30px;line-height: 30px;position:absolute;left:25%;right:25%;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 0.1em;font-size:13px">打印菜单</a>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;height:100%;">
+        <img id='Map' style="width:100%;aspect-ratio:1;transform: rotate(90deg);" alt="Base64 Image" />
+    </div>
+</body>
+<script>
+    const { ipcRenderer } = require('electron');
+    ipcRenderer.send('printdata', 1);
+
+    ipcRenderer.on('printdata', (event, obj) => {
+    document.getElementById('Map').src = obj;
+    ipcRenderer.send('printact', 1);
+    })
+</script>
+</html>
