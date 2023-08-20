@@ -20,7 +20,7 @@
 <body style="overflow: hidden;">
     <div class="WindowTitleBar"> <!--*标题栏-->
         <img src="./assets/app.png" width="20" height="20" style="position: absolute;line-height: 26px;margin: 4px 0px 0px 5px;left:5px;">
-        <a id="Title" style="height: 30px;line-height: 30px;position:absolute;left:25%;right:25%;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 0.1em;font-size:13px">第11届全国大学生光电设计竞赛西南赛区藏宝图生成器</a>
+        <a id="Title" style="height: 30px;line-height: 30px;position:absolute;left:25%;right:25%;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 0.1em;font-size:13px">第11届全国大学生光电设计竞赛藏宝图生成器</a>
     </div>
 
     <div class="SettingsPage" style="width:100%;display:block;background: url('./assets/background.jpg') no-repeat;background-size: cover;"> <!--*用户页 -->
@@ -36,7 +36,7 @@
             
             <div class="Winui3brickContainer" style="height:auto;display:flex;justify-content: center;">
                 <p class="Winui3brickRightText" style='left: 20px;top: 0px;text-align: left;'>生成结果（摆放图与藏宝图）</p>
-                <p class="Winui3brickRightText" style='right: 20px;top: 0px;font-size: 12px;'>Source: MapGen Engine</p>
+                <p class="Winui3brickRightText" style='right: 20px;top: 0px;font-size: 12px;'>Source: MapGen Engine 2</p>
                 <div id="MapGenerate" style="width: 40%;aspect-ratio: 1; margin-top: 45px;border-radius:8px;margin-right:10px;"><canvas id="MapCanvas" style="height:100%;width: 100%;border-radius:8px;"></canvas></div>
                 <div id="MapGenerateGray" style="width: 40%;aspect-ratio: 1; margin-top: 45px;border-radius:8px;margin-left:10px;"><canvas id="MapCanvasGray" style="height:100%;width: 100%;border-radius:8px;"></canvas></div>
             </div>
@@ -59,11 +59,11 @@
 
             <div class="Winui3brickContainer" style="background-color: rgb(43, 79, 108);height:auto">
                 <svg t="1669908006524" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1391"  width="25" height="25"><path d="M510.032 93.09c-229.9 0-416.94 187.924-416.94 418.91 0 230.986 187.92 418.91 418.908 418.91 230.986 0 418.91-187.924 418.91-418.91 0-230.986-188.804-418.91-420.88-418.91z" fill="#5fb5fc" p-id="1392" ></path><path d="M558.546 723.78h-93.092v-93.09h93.092zM558.546 539.928h-93.092V302.546h93.092z" fill="#000" p-id="1393" ></path></svg>
-                <p style="margin-left:13px;font-size: 15px;font-weight: nomal;width: 90%;line-height: 1.5;">使用指南：点击“生成藏宝图”，程序即可生成根据组委会提供的参考模板图像按照比赛要求生成包含宝藏位置信息的<b>彩底黑点的识别用图和彩底红/蓝描边，黄/绿填充点的摆放用图</b>各一张。生成后可选择打印或保存至本地。</p>
+                <p style="margin-left:13px;font-size: 15px;font-weight: nomal;width: 90%;line-height: 1.5;">使用指南：点击“生成藏宝图”，程序即可生成根据参考地图模板图像按照比赛要求生成包含宝藏位置信息的<b>彩底黑点的识别用图和彩底红/蓝描边，黄/绿填充点的摆放用图</b>各一张。生成后可选择打印或保存至本地。</p>
             </div>
 
             <div class="Winui3brickContainer" style="height:70px"><img src="./assets/app.png" width="20" height="20" style="margin-right: 10px;margin-left:5px;">
-                <div><div style="margin-bottom: 5px;">关于本软件</div><a class="Winui3brickSubtitle" style="font-size: 13px;margin-top: 5px;">本软件由电子科技大学应用电子科技协会研发，负责西南赛区比赛藏宝图的现场生成工作。正式比赛使用软件与本软件相同。Background PixivID:100941489</a></div></div>
+                <div><div style="margin-bottom: 5px;">关于本软件</div><a class="Winui3brickSubtitle" style="font-size: 13px;margin-top: 5px;">本软件由电子科技大学应用电子科技协会研发，用于辅助西南赛区比赛藏宝图的生成筹备工作。现已支持国赛规则藏宝图生成。Background PixivID:100941489</a></div></div>
             <div class="Winui3brickContainer">Designed By<span class="Winui3brickRightText">JimHan @ AEA,UESTC</span></div>
             <div class="Winui3brickContainer">本项目基于GPL-3.0 license开放源代码<button type="button" value="仓库地址"  class="Winui3button" style="width:120px" onclick="shell.openExternal('https://github.com/JimHans/OPTMapGenerator');">了解更多</button></div>
             <div class="Winui3brickContainer">当前版本<p id="App-version" class="Winui3brickRightText"></p></div>

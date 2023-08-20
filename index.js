@@ -13,7 +13,7 @@ function createWindow () {
     var screenElectron = require('electron').screen;
     var screenwidthcalc = Math.min(parseInt(screenElectron.getPrimaryDisplay().workAreaSize.width),parseInt(screenElectron.getPrimaryDisplay().workAreaSize.height))
     // 创建主程序浏览器窗口
-    const win = new BrowserWindow({
+    const win = new MicaBrowserWindow({
       width:  parseInt(screenwidthcalc*(1)),
       height: parseInt(screenwidthcalc*(0.85)),
       minWidth: 500,
@@ -39,7 +39,8 @@ function createWindow () {
       }
     })
   
-    // win.setAcrylic();     // Acrylic window
+    win.setAcrylic();     // Acrylic window
+    // win.setMicaTabbedEffect();win.setAutoTheme();
     // 并且为你的应用加载index.html
     win.loadFile('index.html');
     require("@electron/remote/main").enable(win.webContents)

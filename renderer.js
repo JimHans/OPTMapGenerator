@@ -97,7 +97,8 @@ function MapGenerate() {
     ctxGray.drawImage(imgGray, 0, 0);
     // const start_x = -2100, start_y = -2100, end_x = 2100, end_y = 2100;
     const cell = 420; //每个格子的边长
-    let forbidden_area = [[1,-1],[2,-1],[1,1],[2,1],[3,1],[3,2],[4,2],[4,3],[5,3],[5,4],[4,4],[4,5],[5,5]] //禁止生成区域
+    let forbidden_area = [[1,-1],[2,-1],[1,1],[2,1],[3,1],[3,2],[4,2],[4,3],[5,3],[5,4],[4,4],[4,5],[5,5],
+        [-5,-1],[5,1],[-2,2],[2,-2],[-3,3],[3,-3],[2,3],[-2,-3],[1,4],[-1,-4],[-1,4],[1,-4],[-2,5],[2,-5],[-4,5],[4,-5]] //禁止生成区域
     const numbers = [-5,-4,-3,-2,-1,1,2,3,4,5]; //生成随机数的数组
     let randomx = 0, randomy = 0; //存储随机生成坐标数
     let quadrant_mem = [[0,0,0,0],[0,0,0,0]] //存储四个象限是否已生成宝藏
@@ -110,11 +111,12 @@ function MapGenerate() {
     // 图片加载完成后，在canvas上绘制图片
     ctx.drawImage(img, 0, 0);
     let index = 0;
+    let red_fake = 0,blue_fake = 0;
     while(index<4){
         //生成红方宝藏,对应蓝方宝藏
         // 生成一个1到10之间的随机整数
+        const array = new Uint32Array(1);
         while(1){
-            const array = new Uint32Array(1);
             window.crypto.getRandomValues(array);
             randomx = array[0] % numbers.length; randomx = numbers[randomx];
             window.crypto.getRandomValues(array);
@@ -130,7 +132,9 @@ function MapGenerate() {
         //绘制红方宝藏
         ctx.fillStyle = '#ff0000';ctx.beginPath();
         ctx.arc(center_x+randomx*cell+revise_cellx, center_y-randomy*cell+revise_celly, 100, 0, 2 * Math.PI);ctx.fill();
-        if(index==3) ctx.fillStyle = '#f0ff00'; else ctx.fillStyle = '#308430';ctx.beginPath();
+        window.crypto.getRandomValues(array); 
+        let if_fake_treas = array[0] % 2;
+        /*if(index==3)*/ if(if_fake_treas==1 && red_fake==0) {ctx.fillStyle = '#f0ff00';red_fake=1;} else ctx.fillStyle = '#308430';ctx.beginPath();
         ctx.arc(center_x+randomx*cell+revise_cellx, center_y-randomy*cell+revise_celly, 50, 0, 2 * Math.PI);ctx.fill();
         //绘制红方宝藏(黑点)
         ctxGray.fillStyle = '#000000';ctxGray.beginPath();
@@ -139,7 +143,9 @@ function MapGenerate() {
         //绘制蓝方宝藏
         ctx.fillStyle = '#0000ff';ctx.beginPath();
         ctx.arc(center_x+(randomx*cell+revise_cellx)*(-1), center_y+(-randomy*cell+revise_celly)*(-1), 100, 0, 2 * Math.PI);ctx.fill();
-        if(index==3) ctx.fillStyle = '#308430'; else ctx.fillStyle = '#f0ff00';ctx.beginPath();
+        window.crypto.getRandomValues(array); 
+        let if_fake_treasb = array[0] % 2;
+        /*if(index==3)*/ if(if_fake_treasb==1 && blue_fake==0) {ctx.fillStyle = '#308430';blue_fake=1;} else ctx.fillStyle = '#f0ff00';ctx.beginPath();
         ctx.arc(center_x+(randomx*cell+revise_cellx)*(-1), center_y+(-randomy*cell+revise_celly)*(-1), 50, 0, 2 * Math.PI);ctx.fill();
         //绘制蓝方宝藏(黑点)
         ctxGray.fillStyle = '#000000';ctxGray.beginPath();
