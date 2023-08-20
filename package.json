@@ -1,6 +1,6 @@
 {
   "name": "mapgenerator",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Optic Competition Map Generator",
   "buildinf": "Build 20230821",
   "main": "index.js",
